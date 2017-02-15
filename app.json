@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/tabbar/tabbar",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/item/item",
+    "pages/address/address",
+    "pages/personal/personal"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}
