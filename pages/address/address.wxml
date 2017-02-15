@@ -1,0 +1,5 @@
+<!--pages/address/address.wxml-->
+<text>pages/address/address.wxml</text>
+
+<import src="../tabbar/tabbar.wxml"/>
+<template is="tabbar" data="{{tabbar}}"/>

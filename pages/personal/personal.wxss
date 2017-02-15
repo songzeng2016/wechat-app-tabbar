@@ -1,0 +1,2 @@
+/* pages/personal/personal.wxss */
+@import "/pages/tabbar/tabbar.wxss"
