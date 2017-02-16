@@ -87,3 +87,20 @@ tabbar:{
     有没有感觉很熟悉，没错就是你熟悉的tababar配置，仅仅增加了一个selected参数来表示选中的状态
     另外一点要注意的是我们的tabbar数据配置在app.js里面而不是app.json里面
     
+###最后还有一个比较重要的点 在app.js里面的一个函数
+```
+editTabBar: function(){
+    var tabbar = this.globalData.tabbar,
+        currentPages = getCurrentPages(),
+        _this = currentPages[currentPages.length - 1],
+        pagePath = _this.__route__;
+    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+    for(var i in tabbar.list){
+      tabbar.list[i].selected = false;
+      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+    }
+    _this.setData({
+      tabbar: tabbar
+    });
+  },
+```
