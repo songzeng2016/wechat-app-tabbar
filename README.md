@@ -104,3 +104,132 @@ editTabBar: function(){
     });
   },
 ```
+###我们完整的app.js是这样的
+```
+//app.js
+App({
+  onLaunch: function () {
+    //调用API从本地缓存中获取数据
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+  },
+  getUserInfo:function(cb){
+    var that = this
+    if(this.globalData.userInfo){
+      typeof cb == "function" && cb(this.globalData.userInfo)
+    }else{
+      //调用登录接口
+      wx.login({
+        success: function () {
+          wx.getUserInfo({
+            success: function (res) {
+              that.globalData.userInfo = res.userInfo
+              typeof cb == "function" && cb(that.globalData.userInfo)
+            }
+          })
+        }
+      })
+    }
+  },
+  editTabBar: function(){
+    var tabbar = this.globalData.tabbar,
+        currentPages = getCurrentPages(),
+        _this = currentPages[currentPages.length - 1],
+        pagePath = _this.__route__;
+    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+    for(var i in tabbar.list){
+      tabbar.list[i].selected = false;
+      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+    }
+    _this.setData({
+      tabbar: tabbar
+    });
+  },
+  globalData:{
+    userInfo:null,
+    tabbar:{
+      color: "#000000",
+      selectedColor: "#0f87ff",
+      backgroundColor: "#ffffff",
+      borderStyle: "black",
+      list: [
+        {
+          pagePath: "/pages/tabbar/tabbar",
+          text: "项目",
+          iconPath: "/images/item.png",
+          selectedIconPath: "/images/item_HL.png",
+          selected: true
+        },
+        {
+          pagePath: "/pages/address/address",
+          text: "通讯录",
+          iconPath: "/images/ts.png",
+          selectedIconPath: "/images/ts1.png",
+          selected: false
+        },
+        {
+          pagePath: "/pages/personal/personal",
+          text: "文件",
+          iconPath: "/images/wjj.png",
+          selectedIconPath: "/images/wjj1.png",
+          selected: false
+        }
+      ],
+      position: "bottom"
+    }
+  }
+})
+```
+    生成的东西我没有删掉
+    
+###到这准备工作已经完成  下面就是怎么使用
+
+####在wxml引入创建的模板并使用
+```
+<import src="../tabbar/tabbar.wxml"/>
+<template is="tabbar" data="{{tabbar}}"/>
+
+```
+    我这里是相对路径，最好写成绝对路径
+    
+####wxss中引入样式
+```
+@import "/pages/tabbar/tabbar.wxss"
+
+```
+
+####js中调用函数
+
+```
+//获取app实例
+var app = getApp();
+
+Page({
+  data:{
+    tabbar:{}
+  },
+  onLoad:function(options){
+    // 页面初始化 options为页面跳转所带来的参数
+    
+    //调用函数
+    app.editTabBar(); 
+  },
+  onReady:function(){
+    // 页面渲染完成
+  },
+  onShow:function(){
+    // 页面显示
+  },
+  onHide:function(){
+    // 页面隐藏
+  },
+  onUnload:function(){
+    // 页面关闭
+  }
+})
+```
+
+    注意在每个配置在tabbar中的页面都要有这三步，因为这个是页面跳转了
+    还有一个问题就是页面跳转的时候会闪一下，网络慢的时候更明显
+    后面我会做一个不是跳转页面的tabbar
