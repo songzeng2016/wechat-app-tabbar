@@ -5,7 +5,7 @@
 
 ###创建wxml模板
 
-```
+```html
 <template name="tabbar">
     <view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}}">
         <block wx:for="{{tabbar.list}}" wx:for-item="item" wx:key="index">
@@ -19,7 +19,7 @@
 ``` 
 ###wxss布局
 
-```
+```css
 .tabbar_box{
     display: flex;
     flex-direction: row;
@@ -51,7 +51,7 @@
 
 ##重点来了 tabbar的参数配置
 
-```
+```javascript
 tabbar:{
       color: "#000000",
       selectedColor: "#0f87ff",
@@ -88,7 +88,7 @@ tabbar:{
     另外一点要注意的是我们的tabbar数据配置在app.js里面而不是app.json里面
     
 ###最后还有一个比较重要的点 在app.js里面的一个函数
-```
+```javascript
 editTabBar: function(){
     var tabbar = this.globalData.tabbar,
         currentPages = getCurrentPages(),
@@ -105,7 +105,7 @@ editTabBar: function(){
   },
 ```
 ###我们完整的app.js是这样的
-```
+```javascript
 //app.js
 App({
   onLaunch: function () {
@@ -186,7 +186,7 @@ App({
 ###到这准备工作已经完成  下面就是怎么使用
 
 ####在wxml引入创建的模板并使用
-```
+```html
 <import src="../tabbar/tabbar.wxml"/>
 <template is="tabbar" data="{{tabbar}}"/>
 
@@ -194,14 +194,14 @@ App({
     我这里是相对路径，最好写成绝对路径
     
 ####wxss中引入样式
-```
+```css
 @import "/pages/tabbar/tabbar.wxss"
 
 ```
 
 ####js中调用函数
 
-```
+```javascript
 //获取app实例
 var app = getApp();
 
