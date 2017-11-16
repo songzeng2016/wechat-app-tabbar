@@ -236,4 +236,4 @@ Page({
     
 ###### 不跳转页面的暂时还没有更好的思路先给大家推荐一个  [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
 
-   
+[微信小程序仿微信， QQ 向左滑动删除操作](https://github.com/songzeng2016/wechat-app-LeftSlide)
