@@ -233,7 +233,7 @@ Page({
     注意在每个配置在tabbar中的页面都要有这三步，因为这个是页面跳转了
     还有一个问题就是页面跳转的时候会闪一下，网络慢的时候更明显
     后面我会做一个不是跳转页面的tabbar
-    
-    不跳转页面的暂时还没有更好的思路先给大家推荐一个 
-    [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
+    
+###### 不跳转页面的暂时还没有更好的思路先给大家推荐一个  [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
+
    
