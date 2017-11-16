@@ -1,9 +1,9 @@
 # wechat-app-tabbar
-##微信小程序 自定义tabbar
+## 微信小程序 自定义tabbar
 
 ![tabbar](https://github.com/songzeng2016/wechat-app-tabbar/raw/master/images/GIF.gif)   
 
-###创建wxml模板
+### 创建wxml模板
 
 ```html
 <template name="tabbar">
@@ -17,7 +17,7 @@
     </view>
 </template>
 ``` 
-###wxss布局
+### wxss布局
 
 ```css
 .tabbar_box{
@@ -49,7 +49,7 @@
 ```
     布局不是重点也可以自定义布局也可以引用我写好的样式
 
-##重点来了 tabbar的参数配置
+## 重点来了 tabbar的参数配置
 
 ```javascript
 tabbar:{
@@ -87,7 +87,7 @@ tabbar:{
     有没有感觉很熟悉，没错就是你熟悉的tababar配置，仅仅增加了一个selected参数来表示选中的状态
     另外一点要注意的是我们的tabbar数据配置在app.js里面而不是app.json里面
     
-###最后还有一个比较重要的点 在app.js里面的一个函数
+### 最后还有一个比较重要的点 在app.js里面的一个函数
 ```javascript
 editTabBar: function(){
     var tabbar = this.globalData.tabbar,
@@ -104,7 +104,7 @@ editTabBar: function(){
     });
   },
 ```
-###我们完整的app.js是这样的
+### 我们完整的app.js是这样的
 ```javascript
 //app.js
 App({
@@ -183,9 +183,9 @@ App({
 ```
     生成的东西我没有删掉
     
-###到这准备工作已经完成  下面就是怎么使用
+### 到这准备工作已经完成  下面就是怎么使用
 
-####在wxml引入创建的模板并使用
+#### 在wxml引入创建的模板并使用
 ```html
 <import src="../tabbar/tabbar.wxml"/>
 <template is="tabbar" data="{{tabbar}}"/>
@@ -193,13 +193,13 @@ App({
 ```
     我这里是相对路径，最好写成绝对路径
     
-####wxss中引入样式
+#### wxss中引入样式
 ```css
 @import "/pages/tabbar/tabbar.wxss"
 
 ```
 
-####js中调用函数
+#### js中调用函数
 
 ```javascript
 //获取app实例
@@ -234,5 +234,6 @@ Page({
     还有一个问题就是页面跳转的时候会闪一下，网络慢的时候更明显
     后面我会做一个不是跳转页面的tabbar
     
-    不跳转页面的暂时还没有更好的思路先给大家推荐一个
-    [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
+    不跳转页面的暂时还没有更好的思路先给大家推荐一个 
+    [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
+   
