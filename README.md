@@ -1,6 +1,15 @@
 # wechat-app-tabbar
 ## 微信小程序 自定义tabbar
 
+[项目地址，欢迎 star](https://github.com/songzeng2016/wechat-app-tabbar) 
+
+[https://github.com/songzeng2016/wechat-app-tabbar](https://github.com/songzeng2016/wechat-app-tabbar)
+
+### 前言
+
+项目中我们可能会用到两层 tabbar 而小程序只能配置出一层，或者我们想自定义 tabbar 的样式或功能，这时候就需要我们自己定义 tabbar。
+先来张图看下效果，下面是实现步骤。
+
 ![tabbar](https://github.com/songzeng2016/wechat-app-tabbar/raw/master/images/GIF.gif)   
 
 ### 创建wxml模板
@@ -237,3 +246,5 @@ Page({
 ###### 不跳转页面的暂时还没有更好的思路先给大家推荐一个  [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
 
 [微信小程序仿微信， QQ 向左滑动删除操作](https://github.com/songzeng2016/wechat-app-LeftSlide)
+
+[微信小程序 自定义tabbar](https://github.com/songzeng2016/wechat-app-tabbar)
