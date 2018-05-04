@@ -58,7 +58,7 @@
 ```
     布局不是重点也可以自定义布局也可以引用我写好的样式
 
-## 重点来了 tabbar的参数配置
+### 重点来了 tabbar的参数配置
 
 ```javascript
 tabbar:{
@@ -243,7 +243,7 @@ Page({
     还有一个问题就是页面跳转的时候会闪一下，网络慢的时候更明显
     后面我会做一个不是跳转页面的tabbar
     
-###### 不跳转页面的暂时还没有更好的思路先给大家推荐一个  [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
+不跳转页面的暂时还没有更好的思路先给大家推荐一个  [不跳转页面的tabbar](https://github.com/marlti7/wx-mina-custom-tabbar)
 
 [微信小程序仿微信， QQ 向左滑动删除操作](https://github.com/songzeng2016/wechat-app-LeftSlide)
 
